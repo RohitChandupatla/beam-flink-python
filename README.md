@@ -1,4 +1,4 @@
-# beam-flink-python 
+# beam-python 
 
 ## Team members
 
