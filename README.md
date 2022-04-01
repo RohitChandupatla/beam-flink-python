@@ -52,4 +52,11 @@ Apache Flink is an excellent choice to develop and run many different types of a
 
 [Wiki](https://github.com/RohitChandupatla/beam-python/wiki/Shabnam-Shaik)<br>
 
+**Gahana Swetha Sanagala**
+
+[Workspace](https://github.com/RohitChandupatla/beam-python/tree/main/Swetha)<br>
+
+[Wiki](https://github.com/RohitChandupatla/beam-python/wiki/Gahana-Swetha-Sanagala)<br>
+
+
 
