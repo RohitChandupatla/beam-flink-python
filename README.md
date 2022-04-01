@@ -27,7 +27,7 @@ Apache Flink is an excellent choice to develop and run many different types of a
 
 [Wiki](https://github.com/RohitChandupatla/beam-python/wiki/Akanksha-Sudhagoni)<br>
 
-**Rohit**
+**Rohit Reddy Chandupatla**
 
 [Workspace](https://github.com/RohitChandupatla/beam-python/tree/main/Rohit)<br>
 
