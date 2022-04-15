@@ -1,4 +1,4 @@
-package org.apache.beam.origin;
+package edu.nwmsu.origin;
 
 // beam-playground:
 //   name: MinimalWordCount
