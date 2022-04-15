@@ -1,4 +1,4 @@
-package org.apache.beam.examples;
+package edu.nwmsu.origin.beam.;
 
 
 import org.apache.beam.examples.MinimalPageRankRohit;
