@@ -1,4 +1,4 @@
-#word-count-beam
+#beam-java by Rohit
 
 Java Quickstart for Apache Beam
 
@@ -23,15 +23,9 @@ mvn archetype:generate `
  -D interactiveMode=false`
 ```
 
-## Execute using DirectRunner
-
-```PowerShell
-mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.WordCount `
- -D exec.args="--inputFile=sample.txt --output=counts" -P direct-runner
-```
 
 ## Execute PR Quick Start
 
 ```PowerShell
-mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.MinimalPageRankCase 
+mvn compile exec:java -D exec.mainClass= edu.nwmsu.section02group05.rohit.MinimalPageRankRohit 
 ```
