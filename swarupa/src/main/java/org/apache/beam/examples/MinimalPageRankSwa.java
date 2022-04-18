@@ -78,7 +78,7 @@ public class MinimalPageRankSwa {
        
         //
         // By default, it will write to a set of files with names like wordcounts-00001-of-00005
-        PColLinkString.apply(TextIO.write().to("swaKv"));
+        PColLinkString.apply(TextIO.write().to("PageRank-Swa"));
        
 
         p.run().waitUntilFinish();
