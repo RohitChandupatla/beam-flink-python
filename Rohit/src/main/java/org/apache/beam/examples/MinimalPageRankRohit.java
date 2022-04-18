@@ -1,7 +1,6 @@
-package edu.nwmsu.origin.beam.;
+package edu.nwmsu.section02group05.rohit;
 
-
-import org.apache.beam.examples.MinimalPageRankRohit;
+import edu.nwmsu.section02group05.rohit.MinimalPageRankRohit;
 import java.util.Arrays;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
@@ -59,7 +58,7 @@ public class MinimalPageRankRohit {
         //
         // By default, it will write to a set of files with names like wordcounts-00001-of-00005
         // output RohitKVOutput
-        PCollectionLinksString.apply(TextIO.write().to("RohitKVOutput"));
+        PCollectionLinksString.apply(TextIO.write().to("RankedPage-Rohit"));
        
 
         p.run().waitUntilFinish();
