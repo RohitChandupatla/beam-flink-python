@@ -14,7 +14,6 @@ org\apache\beam\examples\complete\game\UserScore$GameActionInfo.class
 org\apache\beam\examples\WindowedWordCount$DefaultToMinTimestampPlusOneHour.class
 org\apache\beam\examples\WordCount$ExtractWordsFn.class
 org\apache\beam\examples\complete\game\utils\WriteToBigQuery$BuildRowFn.class
-org\apache\beam\examples\MinimalPageRankAkanksha.class
 org\apache\beam\examples\WindowedWordCount$Options.class
 org\apache\beam\examples\complete\game\injector\Injector.class
 org\apache\beam\examples\WordCount.class
@@ -37,12 +36,15 @@ org\apache\beam\examples\complete\game\GameStats$UserSessionInfoFn.class
 org\apache\beam\examples\WordCount$WordCountOptions.class
 org\apache\beam\examples\complete\game\GameStats$CalculateSpammyUsers.class
 org\apache\beam\examples\complete\game\GameStats$Options.class
+edu\nwmsu\section02group05\akanksha\MinimalPageRankAkanksha.class
 org\apache\beam\examples\common\ExamplePubsubTopicAndSubscriptionOptions$PubsubSubscriptionFactory.class
 org\apache\beam\examples\subprocess\utils\FileUtils.class
 org\apache\beam\examples\common\ExampleBigQueryTableOptions$BigQueryTableFactory.class
 org\apache\beam\examples\complete\game\utils\WriteWindowedToBigQuery.class
 org\apache\beam\examples\subprocess\kernel\SubProcessIOFiles.class
 org\apache\beam\examples\subprocess\utils\CallingSubProcessUtils.class
+edu\nwmsu\section02group05\rohit\VotingPage.class
+edu\nwmsu\section02group05\rohit\RankedPage.class
 org\apache\beam\examples\common\ExampleBigQueryTableOptions.class
 org\apache\beam\examples\common\ExampleOptions.class
 org\apache\beam\examples\common\ExamplePubsubTopicOptions$PubsubTopicFactory.class

@@ -1,6 +1,6 @@
 package edu.nwmsu.section02group05.akanksha;
 
-import edu.nwmsu.section02group05.akanksha.MinimalPageRankakanksha;
+import edu.nwmsu.section02group05.akanksha.MinimalPageRankAkanksha;
 import java.util.Arrays;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
