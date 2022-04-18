@@ -25,3 +25,8 @@ mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.WordCount `
 ### Inspecting results
 $ ls counts*
  
+## Execute PR Quick Start
+
+```PowerShell
+mvn compile exec:java -D exec.mainClass=edu.nwmsu.section02group05.swarupa.MinimalPageRankSwa
+```
