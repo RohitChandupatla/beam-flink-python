@@ -1,4 +1,4 @@
-# beam-java by Rohit
+# beam-java by Akanksha
 
 Java Quickstart for Apache Beam
 
@@ -27,5 +27,5 @@ mvn archetype:generate `
 ## Execute PR Quick Start
 
 ```PowerShell
-mvn compile exec:java -D exec.mainClass= edu.nwmsu.section02group05.rohit.MinimalPageRankRohit 
+mvn compile exec:java -D exec.mainClass=edu.nwmsu.section02group05.rohit.MinimalPageRankAkanksha
 ```
