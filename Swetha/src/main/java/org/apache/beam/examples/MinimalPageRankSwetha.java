@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.beam.examples;
+package edu.nwmsu.section02group05.swetha;
 
 // beam-playground:
 //   name: MinimalWordCount
@@ -27,7 +27,7 @@ package org.apache.beam.examples;
 //     - Filtering
 //     - IO
 //     - Core Transforms
-
+import edu.nwmsu.section02group05.swetha.MinimalPageRankSwetha;
 import java.util.Arrays;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
@@ -44,7 +44,7 @@ import org.apache.beam.sdk.values.PCollectionList;
 import org.apache.beam.sdk.values.TypeDescriptor;
 import org.apache.beam.sdk.values.TypeDescriptors;
 
-public class PageRank {
+public class MinimalPageRankSwetha {
 
   public static void main(String[] args) {
 
