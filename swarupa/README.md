@@ -30,3 +30,7 @@ $ ls counts*
 ```PowerShell
 mvn compile exec:java -D exec.mainClass=edu.nwmsu.section02group05.swarupa.MinimalPageRankSwa
 ```
+
+## Links
+<br> https://github.com/RohitChandupatla/beam-java/issues  </br>
+https://github.com/RohitChandupatla/beam-java/wiki/Swarupa-Pedapalli
