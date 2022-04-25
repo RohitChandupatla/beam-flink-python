@@ -7,6 +7,14 @@ Maven and Java
 [Issues](https://github.com/RohitChandupatla/beam-java/issues)
 ## Link to MinimalPageRankArla
 [link](https://github.com/RohitChandupatla/beam-java/blob/main/Prasanna/src/main/java/edu/nwmsu/section02group05/arla/MinimalPageRankArla.java)
+## Link to wiki:
+[wiki](https://github.com/RohitChandupatla/beam-java/wiki/Prasanna-Arla)
+## Link to the  project repo:
+[link](https://github.com/RohitChandupatla/beam-java)
+## Link to my folder:
+[folder](https://github.com/RohitChandupatla/beam-java/tree/main/Prasanna)
+## Link to commits:
+[link](https://github.com/RohitChandupatla/beam-java/commits/main)
 
 ## Execution:
 ```
