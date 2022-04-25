@@ -28,7 +28,7 @@ mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.WordCount `
 Inspecting results
 $ ls counts*
 
-## Execute PR Quick Start
+## Execute PR Quick Start Command
 mvn compile exec:java -D exec.mainClass=edu.nwmsu.section02group05.swetha.MinimalPageRankSwetha
 
 ## Link for Issues 
@@ -38,4 +38,23 @@ mvn compile exec:java -D exec.mainClass=edu.nwmsu.section02group05.swetha.Minima
 ## Link for Wiki
 
 (https://github.com/RohitChandupatla/beam-java/wiki/Gahana-Swetha-Sanagala)
+
+## Link for MinimalPagerankSwetha
+
+(https://github.com/RohitChandupatla/beam-java/blob/main/Swetha/src/main/java/edu/nwmsu/section02group05/swetha/MinimalPageRankSwetha.java)
+
+## Link for my Folder
+
+(https://github.com/RohitChandupatla/beam-java/tree/main/Swetha)
+
+## Link for Commits
+
+(https://github.com/RohitChandupatla/beam-java/commits/main)
+
+## Link for Main Project 
+
+(https://github.com/RohitChandupatla/beam-java)
+
+
+
 
