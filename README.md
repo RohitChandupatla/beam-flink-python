@@ -60,6 +60,4 @@ Apache Flink is an excellent choice to develop and run many different types of a
 [Wiki](https://github.com/RohitChandupatla/beam-python/wiki/Gahana-Swetha-Sanagala)<br>
 ## Link to Isuues:
 [Issues link](https://github.com/RohitChandupatla/beam-java/issues)
-## Link to MinimalPageRankArla.java:
-[MinimalPageRankArla](https://github.com/RohitChandupatla/beam-java/blob/main/Prasanna/src/main/java/edu/nwmsu/section02group05/arla/MinimalPageRankArla.java)
 
