@@ -1,5 +1,6 @@
 # beam-java 
-
+## Description:
+Here in this project all our team members have implemented Pagerank using the Apache Beam in their respective folders, and we all have communicated together to work on this project.
 ## Team members
 
 [Rohit Reddy Chandupatla](https://github.com/RohitChandupatla) </br>
