@@ -32,5 +32,5 @@ mvn compile exec:java -D exec.mainClass=edu.nwmsu.section02group05.swarupa.Minim
 ```
 
 ## Links
-<br> https://github.com/RohitChandupatla/beam-java/issues  </br>
-https://github.com/RohitChandupatla/beam-java/wiki/Swarupa-Pedapalli
+<br>[Issues] (https://github.com/RohitChandupatla/beam-java/issues)  </br>
+<br>[Wiki] (https://github.com/RohitChandupatla/beam-java/wiki/Swarupa-Pedapalli) </br>
