@@ -34,4 +34,4 @@ mvn compile exec:java -D exec.mainClass=edu.nwmsu.section02group05.swarupa.Minim
 ## Links
 <br>[Issues] (https://github.com/RohitChandupatla/beam-java/issues)  </br>
 <br>[Wiki] (https://github.com/RohitChandupatla/beam-java/wiki/Swarupa-Pedapalli) </br>
-<br>[MinimalPageRank] (https://github.com/RohitChandupatla/beam-java/blob/main/swarupa/src/main/java/org/apache/beam/examples/MinimalPageRankSwa.java)</br>
+<br>[MinimalPageRank]  (https://github.com/RohitChandupatla/beam-java/blob/main/swarupa/src/main/java/org/apache/beam/examples/MinimalPageRankSwa.java) </br>
