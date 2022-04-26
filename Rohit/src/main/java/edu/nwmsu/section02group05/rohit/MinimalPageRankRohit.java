@@ -1,25 +1,25 @@
 package edu.nwmsu.section02group05.rohit;
 
-import edu.nwmsu.section02group05.rohit.MinimalPageRankRohit;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collection;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
 import org.apache.beam.sdk.options.PipelineOptions;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
-import org.apache.beam.sdk.transforms.Count;
+import org.apache.beam.sdk.transforms.DoFn;
 import org.apache.beam.sdk.transforms.Filter;
-import org.apache.beam.sdk.transforms.FlatMapElements;
 import org.apache.beam.sdk.transforms.Flatten;
+import org.apache.beam.sdk.transforms.GroupByKey;
 import org.apache.beam.sdk.transforms.MapElements;
+import org.apache.beam.sdk.transforms.ParDo;
 import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.PCollectionList;
-import org.apache.beam.sdk.values.TypeDescriptor;
 import org.apache.beam.sdk.values.TypeDescriptors;
 
 
 public class MinimalPageRankRohit {
-  / DEFINE DOFNS
+  // DEFINE DOFNS
   // ==================================================================
   // You can make your pipeline assembly code less verbose by defining
   // your DoFns statically out-of-line.
@@ -30,29 +30,73 @@ public class MinimalPageRankRohit {
 
   /**
    * DoFn Job1Finalizer takes KV(String, String List of outlinks) and transforms
-   * the value into our custom RankedPage Value holding the page's rank and list
+   * the value into our custom RankedPageRohit Value holding the page's rank and list
    * of voters.
    * 
    * The output of the Job1 Finalizer creates the initial input into our
    * iterative Job 2.
    */
-  static class Job1Finalizer extends DoFn<KV<String, Iterable<String>>, KV<String, RankedPage>> {
+  static class Job1Finalizer extends DoFn<KV<String, Iterable<String>>, KV<String, RankedPageRohit>> {
     @ProcessElement
     public void processElement(@Element KV<String, Iterable<String>> element,
-        OutputReceiver<KV<String, RankedPage>> receiver) {
+        OutputReceiver<KV<String, RankedPageRohit>> receiver) {
       Integer contributorVotes = 0;
       if (element.getValue() instanceof Collection) {
         contributorVotes = ((Collection<String>) element.getValue()).size();
       }
-      ArrayList<VotingPage> voters = new ArrayList<VotingPage>();
+      ArrayList<VotingPageRohit> voters = new ArrayList<VotingPageRohit>();
       for (String voterName : element.getValue()) {
         if (!voterName.isEmpty()) {
-          voters.add(new VotingPage(voterName, contributorVotes));
+          voters.add(new VotingPageRohit(voterName, contributorVotes));
         }
       }
-      receiver.output(KV.of(element.getKey(), new RankedPage(element.getKey(), voters)));
+      receiver.output(KV.of(element.getKey(), new RankedPageRohit(element.getKey(), voters)));
     }
   }
+
+  static class Job2Mapper extends DoFn<KV<String, RankedPageRohit>, KV<String, RankedPageRohit>> {
+    @ProcessElement
+    public void processElement(@Element KV<String, RankedPageRohit> element,
+      OutputReceiver<KV<String, RankedPageRohit>> receiver) {
+      int votes = 0;
+      ArrayList<VotingPageRohit> voters = element.getValue().getVoterList();
+      if(voters instanceof Collection){
+        votes = ((Collection<VotingPageRohit>) voters).size();
+      }
+      for(VotingPageRohit vp: voters){
+        String pageName = vp.getVoterName();
+        double pageRank = vp.getPageRank();
+        String contributingPageName = element.getKey();
+        double contributingPageRank = element.getValue().getRank();
+        VotingPageRohit contributor = new VotingPageRohit(contributingPageName,votes,contributingPageRank);
+        ArrayList<VotingPageRohit> arr = new ArrayList<>();
+        arr.add(contributor);
+        receiver.output(KV.of(vp.getVoterName(), new RankedPageRohit(pageName, pageRank, arr)));        
+      }
+    }
+  }
+
+  static class Job2Updater extends DoFn<KV<String, Iterable<RankedPageRohit>>, KV<String, RankedPageRohit>> {
+    @ProcessElement
+    public void processElement(@Element KV<String, Iterable<RankedPageRohit>> element,
+      OutputReceiver<KV<String, RankedPageRohit>> receiver) {
+        Double dampingFactor = 0.85;
+        Double updatedRank = (1 - dampingFactor);
+        ArrayList<VotingPageRohit> newVoters = new ArrayList<>();
+        for(RankedPageRohit rankPage:element.getValue()){
+          if (rankPage != null) {
+            for(VotingPageRohit votingPage:rankPage.getVoterList()){
+              newVoters.add(votingPage);
+              updatedRank += (dampingFactor) * votingPage.getPageRank() / (double)votingPage.getContributorVotes();
+            }
+          }
+        }
+        receiver.output(KV.of(element.getKey(),new RankedPageRohit(element.getKey(), updatedRank, newVoters)));
+
+    }
+
+  }
+
   
 
   public static void main(String[] args) {
@@ -83,17 +127,38 @@ public class MinimalPageRankRohit {
        PCollectionList.of(pcollectionkvpairs1).and(pcollectionkvpairs2).and(pcollectionkvpairs3).and(pcollectionkvpairs4);
 
     PCollection<KV<String, String>> myMergedList = pcCollectionKVpairs.apply(Flatten.<KV<String,String>>pCollections());
+    PCollection<KV<String, Iterable<String>>> pCollectionGroupByKey = myMergedList.apply(GroupByKey.create());
+    // Convert to a custom Value object (RankedPageRohit) in preparation for Job 2
+    PCollection<KV<String, RankedPageRohit>> job02Input = pCollectionGroupByKey.apply(ParDo.of(new Job1Finalizer()));
+  
+    PCollection<KV<String,RankedPageRohit>> job2Mapper = job02Input.apply(ParDo.of(new Job2Mapper()));
+  
 
-    PCollection<String> PCollectionLinksString =  myMergedList.apply(
+    PCollection<KV<String, RankedPageRohit>> job02Output = null; 
+    PCollection<KV<String,Iterable<RankedPageRohit>>> job02MapperGroupbkey = job2Mapper.apply(GroupByKey.create());
+    
+    job02Output = job02MapperGroupbkey.apply(ParDo.of(new Job2Updater()));
+
+  
+    job02MapperGroupbkey = job02Output.apply(GroupByKey.create());
+    
+    job02Output = job02MapperGroupbkey.apply(ParDo.of(new Job2Updater()));
+  
+    job02Output = job02MapperGroupbkey.apply(ParDo.of(new Job2Updater()));
+    job02MapperGroupbkey = job02Output.apply(GroupByKey.create());    
+    job02Output = job02MapperGroupbkey.apply(ParDo.of(new Job2Updater()));   
+    
+
+    PCollection<String> PCollectionLinksString =  job02Output.apply(
       MapElements.into(  
-        TypeDescriptors.strings())
-          .via((myMergeLstout) -> myMergeLstout.toString()));
+        TypeDescriptors.strings()).via(
+        kvtoString -> kvtoString.toString()));
 
        
         //
         // By default, it will write to a set of files with names like wordcounts-00001-of-00005
         // output RohitKVOutput
-        PCollectionLinksString.apply(TextIO.write().to("RankedPage-Rohit"));
+        PCollectionLinksString.apply(TextIO.write().to("RankedPageRohit-Rohit"));
        
 
         p.run().waitUntilFinish();
