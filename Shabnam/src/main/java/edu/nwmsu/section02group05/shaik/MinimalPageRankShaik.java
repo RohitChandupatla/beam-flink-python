@@ -130,7 +130,7 @@ public class MinimalPageRankShaik {
 
     PCollection<KV<String, String>> MergedListShaik = keyvalpairList.apply(Flatten.<KV<String,String>>pCollections());
     PCollection<KV<String, Iterable<String>>> pCollectionGroupByKey = MergedListShaik.apply(GroupByKey.create());
-    // Convert to a custom Value object (RankedPageRohit) in preparation for Job 2
+    // Convert to a custom Value object (RankedPageShaik) in preparation for Job 2
     PCollection<KV<String, RankedPageShaik>> job02Input = pCollectionGroupByKey.apply(ParDo.of(new Job1Finalizer()));
   
     PCollection<KV<String,RankedPageShaik>> job2Mapper = job02Input.apply(ParDo.of(new Job2Mapper()));
