@@ -1,6 +1,4 @@
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\complete\game\injector\Injector.java
-C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\RankedPage.java
-C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\VotingPage.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\complete\game\injector\InjectorUtils.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\DebuggingWordCount.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\subprocess\kernel\SubProcessIOFiles.java
@@ -21,10 +19,12 @@ C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\subprocess\kernel\SubProcessCommandLineArgs.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\complete\game\HourlyTeamScore.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\subprocess\ExampleEchoPipeline.java
-C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\MinimalPageRankSwa.java
+C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\edu\nwmsu\section02group05\swarupa\RankedPage.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\subprocess\configuration\SubProcessConfiguration.java
+C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\edu\nwmsu\section02group05\swarupa\MinimalPageRankSwa.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\common\WriteOneFilePerWindow.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\complete\game\UserScore.java
+C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\edu\nwmsu\section02group05\swarupa\VotingPage.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\common\ExamplePubsubTopicAndSubscriptionOptions.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\common\ExamplePubsubTopicOptions.java
 C:\Users\S542301\Desktop\4sem\BIGDATA\beam-java\swarupa\src\main\java\org\apache\beam\examples\complete\game\injector\RetryHttpInitializerWrapper.java

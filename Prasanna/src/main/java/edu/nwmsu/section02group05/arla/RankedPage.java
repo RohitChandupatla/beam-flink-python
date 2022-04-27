@@ -1,26 +1,46 @@
 package edu.nwmsu.section02group05.arla;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.apache.beam.runners.core.construction.resources.PipelineResourcesOptions;
-import org.apache.beam.sdk.Pipeline;
-import org.apache.beam.sdk.io.TextIO;
-import org.apache.beam.sdk.options.PipelineOptions;
-import org.apache.beam.sdk.options.PipelineOptionsFactory;
-import org.apache.beam.sdk.transforms.Filter;
-import org.apache.beam.sdk.transforms.FlatMapElements;
-import org.apache.beam.sdk.transforms.Flatten;
-import org.apache.beam.sdk.transforms.GroupByKey;
-import org.apache.beam.sdk.transforms.MapElements;
-import org.apache.beam.sdk.values.KV;
-import org.apache.beam.sdk.values.PCollection;
-import org.apache.beam.sdk.values.PCollectionList;
-import org.apache.beam.sdk.values.TypeDescriptors;
-
-public class RankedPage {
-    public RankedPage(String key, ArrayList<VotingPage> voters) {
+public class RankedPage implements Serializable{
+    String voter;
+    double rank;
+    ArrayList<VotingPage> voterList = new ArrayList<>();
+    
+    public RankedPage(String voter,double rank, ArrayList<VotingPage> voters){
+        this.voter = voter;
+        this.voterList = voters;
+        this.rank = rank;
+    }    
+    public RankedPage(String voter, ArrayList<VotingPage> voters){
+        this.voter = voter;
+        this.voterList = voters;
+        this.rank = 1.0;
+    }    
+    
+    public String getVoter() {
+        return voter;
     }
-    String name = "example.md";
-    Double rank = 1.000;
+
+    public void setVoter(String voter) {
+        this.voter = voter;
+    }
+
+    public ArrayList<VotingPage> getVoterList() {
+        return voterList;
+    }
+
+    public void setVoterList(ArrayList<VotingPage> voterList) {
+        this.voterList = voterList;
+    }
+
+    @Override
+    public String toString(){
+        return this.voter +"<"+ this.rank +","+ voterList +">";
+    }
+
+    public double getRank() {
+        return this.rank;
+    }
 }

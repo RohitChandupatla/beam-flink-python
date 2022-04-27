@@ -1,5 +1,6 @@
 # beam-java 
-
+## Description:
+Here in this project all our team members have implemented Pagerank using the Apache Beam in their respective folders, and we all have communicated together to work on this project.
 ## Team members
 
 [Rohit Reddy Chandupatla](https://github.com/RohitChandupatla) </br>
@@ -57,6 +58,6 @@ Apache Flink is an excellent choice to develop and run many different types of a
 [Workspace](https://github.com/RohitChandupatla/beam-python/tree/main/Swetha)<br>
 
 [Wiki](https://github.com/RohitChandupatla/beam-python/wiki/Gahana-Swetha-Sanagala)<br>
-
-
+## Link to Isuues:
+[Issues link](https://github.com/RohitChandupatla/beam-java/issues)
 
