@@ -19,8 +19,8 @@ Apache Flink is an excellent choice to develop and run many different types of a
 
 ## [Comments](https://github.com/RohitChandupatla/beam-python/wiki/Group-Comments)
 
-• Rohit - I am working on Job 3 </br>
-• Rohit - completed both Jobs 1 and 2 </br>
+• **Rohit** - I am working on Job 3 </br>
+• **Rohit** - completed both Jobs 1 and 2 </br>
 
 ## Our Wiki Pages and Folder 
 
